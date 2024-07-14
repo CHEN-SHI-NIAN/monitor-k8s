@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-app-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: my-app
+  template:
+    metadata:
+      labels:
+        app: my-app
+    spec:
+      containers:
+      - name: my-app
+        image: shinian1031/my-app:latest
+        ports:
+        - containerPort: 8080
+        resources:
+          requests:
+            memory: "64Mi"   # 请求最少 64 MiB 内存
+            cpu: "250m"       # 请求最少 250 millicpu (0.25 CPU core)
+          limits:
+            memory: "128Mi"  # 最多允许 128 MiB 内存
+            cpu: "500m"       # 最多允许 500 millicpu (0.5 CPU core)
