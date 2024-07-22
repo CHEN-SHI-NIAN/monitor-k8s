@@ -19,8 +19,8 @@ spec:
         - containerPort: 8080
         resources:
           requests:
-            memory: "64Mi"   # 请求最少 64 MiB 内存
-            cpu: "250m"       # 请求最少 250 millicpu (0.25 CPU core)
+            memory: "64Mi"   # Request at least 64 MiB of memory
+            cpu: "250m"       # Request at least 250 millicpu (0.25 CPU core)
           limits:
-            memory: "128Mi"  # 最多允许 128 MiB 内存
-            cpu: "500m"       # 最多允许 500 millicpu (0.5 CPU core)
+            memory: "128Mi"  # Allow up to 128 MiB of memory
+            cpu: "500m"       # Allow up to 500 millicpu (0.5 CPU core)
