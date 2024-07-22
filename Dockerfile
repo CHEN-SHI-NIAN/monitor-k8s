@@ -1,14 +1,14 @@
-# 使用官方的 Python 運行環境作為父鏡像
+# Use the official Python runtime as a parent image
 FROM python:3.8-slim
 
-# 設置工作目錄
+# Set the working directory
 WORKDIR /usr/src/app
 
-# 將當前目錄的內容拷貝到容器中
+# Copy the current directory contents into the container
 COPY . .
 
-# 安裝 requirements.txt 中指定的所有依賴包
+# Install any dependencies specified in requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
 
-# 當容器啟動時運行 market_monitor.py
+# Run app.py when the container launches
 CMD ["python", "app.py"]
