@@ -1,7 +1,7 @@
 from web3 import Web3
 import json
 
-infura_url = 'https://mainnet.infura.io/v3/f3fa5aac4b1549bf8b3eceb0b3086ef8'
+infura_url = 'your_infura_url'
 web3 = Web3(Web3.HTTPProvider(infura_url))
 
 if web3.is_connected():
